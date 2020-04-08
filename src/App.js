@@ -3,8 +3,8 @@ import './App.css';
 import RecipeList from './components/RecipeList'
 const axios = require('axios');
 
-const APP_ID = '5791700b'
-const APP_KEY = '39b29beaddcd273354ce0cfdaa31cef7	'
+const APP_ID = ''
+const APP_KEY = ''
 
 
 
