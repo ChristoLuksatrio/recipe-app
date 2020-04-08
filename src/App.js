@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import RecipeList from './components/RecipeList'
+import { Grid } from '@material-ui/core';
+import { Navbar, Form } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const axios = require('axios');
 
 
@@ -42,13 +46,18 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <form onSubmit={getSearch}>
-        <input type='text' value={search} onChange={updateSearch} />
-        <button type='submit'>Search</button>
-      </form>
-      <RecipeList recipes={recipes} />
-    </div>
+    <Grid container>
+      <Navbar bg="light" fixed="top">
+        <Navbar.Brand href="#home">Recipe Finder</Navbar.Brand>
+        <Form inline onSubmit={getSearch}>
+          <input type='text' value={search} onChange={updateSearch} />
+          <button type='submit'>Search</button>
+        </Form>
+      </Navbar>
+      <Grid item xs={12}>
+        <RecipeList recipes={recipes} />
+      </Grid>
+    </Grid>
   );
 }
 
